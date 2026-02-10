@@ -100,8 +100,6 @@ static inline void
 hmp_dequeue_entity_load_avg(struct cfs_rq *cfs_rq, struct sched_entity *se);
 
 static inline void hmp_next_up_delay(struct sched_entity *se, int cpu);
-extern unsigned int hmp_cpu_is_fastest(int cpu);
-extern unsigned int hmp_cpu_is_slowest(int cpu);
 
 #else
 #define se_load(se) 0
@@ -116,7 +114,5 @@ static inline int hmp_select_task_rq_fair(int sd_flag, struct task_struct *p,
 static inline void hmp_online_cpu(int cpu) {}
 static inline void hmp_offline_cpu(int cpu) {}
 static inline int hmp_idle_pull(int this_cpu) { return 0; }
-static inline unsigned int hmp_cpu_is_fastest(int cpu) { return 0; }
-static inline unsigned int hmp_cpu_is_slowest(int cpu) { return 0; }
 
 #endif /* CONFIG_SCHED_HMP */

@@ -33,9 +33,6 @@
 #include <linux/tick.h>
 #include <linux/slab.h>
 
-static inline unsigned int hmp_cpu_is_fastest(int cpu) { return 0; }
-static inline unsigned int hmp_cpu_is_slowest(int cpu) { return 0; }
-
 #ifdef CONFIG_PARAVIRT
 #include <asm/paravirt.h>
 #endif

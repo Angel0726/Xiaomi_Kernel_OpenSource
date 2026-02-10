@@ -97,9 +97,11 @@ struct hmp_statisic {
 	unsigned int nr_force_down;
 };
 
+extern unsigned int hmp_cpu_is_fastest(int cpu);
 extern unsigned int hmp_cpu_is_slowest(int cpu);
 #else
 static inline unsigned int hmp_cpu_is_slowest(int cpu) { return false; }
+static inline unsigned int hmp_cpu_is_fastest(int cpu) { return false; }
 #endif /* CONFIG_SCHED_HMP */
 
 #ifdef CONFIG_MACH_MT6873

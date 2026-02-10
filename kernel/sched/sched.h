@@ -33,6 +33,9 @@
 #include <linux/tick.h>
 #include <linux/slab.h>
 
+static inline unsigned int hmp_cpu_is_fastest(int cpu) { return 0; }
+static inline unsigned int hmp_cpu_is_slowest(int cpu) { return 0; }
+
 #ifdef CONFIG_PARAVIRT
 #include <asm/paravirt.h>
 #endif
@@ -40,7 +43,6 @@
 #include "cpupri.h"
 #include "cpudeadline.h"
 #include "cpuacct.h"
-#include "hmp.h"
 
 #ifdef CONFIG_SCHED_DEBUG
 # define SCHED_WARN_ON(x)	WARN_ONCE(x, #x)
